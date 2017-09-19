@@ -1,0 +1,52 @@
+{
+    "variables": [],
+    "info": {
+        "name": "range-upload",
+        "_postman_id": "d1afea6b-ef47-c097-1b53-035433350f32",
+        "description": "range-upload",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [{
+        "name": "unique-code",
+        "description": "unique-code",
+        "request": {
+            "url": "http://192.168.48.192:8080/services/files/unique-code",
+            "method": "GET",
+            "header": [],
+            "body": {}
+        },
+        "response": []
+    }, {
+        "name": "range",
+        "description": "range-upload",
+        "request": {
+            "url": "http://192.168.48.192:8080/resume/files/upload/range",
+            "method": "POST",
+            "header": [],
+            "body": {
+                "mode": "urlencoded"
+            }
+        },
+        "response": []
+    }, {
+        "name": "now",
+        "description": "now",
+        "request": {
+            "url": "http://192.168.48.192:8080/resume/files/upload/now",
+            "method": "GET",
+            "header": [],
+            "body": {}
+        },
+        "response": []
+    }, {
+        "name": "total",
+        "description": "total",
+        "request": {
+            "url": "http://192.168.48.192:8080/resume/files/upload/total",
+            "method": "GET",
+            "header": [],
+            "body": {}
+        },
+        "response": []
+    }]
+}

@@ -1,0 +1,1 @@
+postman.exe -taskpath=./example/req -resultpath=./example/result -rangetpl=./example/tpl/range-tpl.json
