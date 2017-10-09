@@ -14,6 +14,7 @@ import (
 var (
 	proxyType int
 	proxyURL  string
+	logFile   string
 )
 
 func main() {
@@ -22,12 +23,17 @@ func main() {
 	stopChan := make(chan os.Signal)
 	signal.Notify(stopChan, os.Interrupt)
 
-	logger.Init(nil)
-
 	flag.IntVar(&proxyType, "proxy-type", 0, "proxy-type")
 	flag.StringVar(&proxyURL, "proxy-url", "", "proxy-url")
 
+	flag.StringVar(&logFile, "log-file", "./task.log", "log file")
+
 	flag.Parse()
+
+	config := logger.DefalutConfig()
+	config.LogFileName = logFile
+
+	logger.Init(config)
 
 	httpclient.Settings().SetProxy(httpclient.ProxyType(proxyType), proxyURL)
 
