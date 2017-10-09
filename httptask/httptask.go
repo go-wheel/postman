@@ -13,7 +13,7 @@ func DoRequest(requst RequestItem) (string, error) {
 	method := requst.Request.Method
 	reqURL := requst.Request.URL
 	headers := requst.Request.Header
-	client := httpclient.Access(method, reqURL)
+	client := httpclient.Access(method, reqURL, 0)
 	if len(headers) > 0 {
 		for _, header := range headers {
 			client.AddHeader(header.Key, header.Value)
